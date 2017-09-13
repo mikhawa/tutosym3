@@ -2,5 +2,5 @@
 {% block title %}my page!{% endblock %}
 {% block body %}
     <h1>C'est ok</h1><p>{{name}}</p>
-    {{ form(formu)}}
+    {{ form(formu, {'id':'toto','attr':{'class':'tata'}})}}
 {% endblock %}

@@ -24,7 +24,7 @@ class MyController extends Controller {
         
         // pour voir si le formulaire fonctionne
         $form->handleRequest($request);
-        if($form->isValid()){
+        if($form->isSubmitted()&&$form->isValid()){
             dump($form->getClickedButton()->getName());
             dump($form->getData());
         }
