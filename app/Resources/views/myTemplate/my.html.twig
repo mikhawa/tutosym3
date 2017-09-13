@@ -1,3 +1,6 @@
 {% extends 'base.html.twig' %}
 {% block title %}my page!{% endblock %}
-{% block body %}<h1>C'est ok</h1><p>{{name}}</p>{% endblock %}
+{% block body %}
+    <h1>C'est ok</h1><p>{{name}}</p>
+    {{ form(formu)}}
+{% endblock %}
