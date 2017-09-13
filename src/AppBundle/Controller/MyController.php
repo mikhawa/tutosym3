@@ -5,8 +5,10 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
+// use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+// notre formulaire
+use AppBundle\Form\Type\MyFormType;
 
 class MyController extends Controller {
 
@@ -30,12 +32,16 @@ class MyController extends Controller {
         //var_dump($request);
         //dump($request);
         
-        $form = $this->createFormBuilder()
+       /* $form = $this->createFormBuilder()
                 ->add('name',TextType::class,[
                     'data'=>'données'
                 ])
                 ->add('Envoyer', \Symfony\Component\Form\Extension\Core\Type\SubmitType::class)
                 ->getForm();
+        */
+        
+        // depuis mon formulaire
+        $form = $this->createForm(MyFormType::class);
         
         return $this->render('myTemplate/my.html.twig',[
             'name'=>$request->get("param"),
